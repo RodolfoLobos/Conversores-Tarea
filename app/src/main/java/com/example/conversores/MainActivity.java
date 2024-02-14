@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         tbh.addTab(tbh.newTabSpec("ALMACENAMIENTO").setContent(R.id.Almacenamiento).setIndicator("ALMACENAMIENTO", null));
         tbh.addTab(tbh.newTabSpec("MONEDAS").setContent(R.id.Monedas).setIndicator("MONEDAS", null));
         tbh.addTab(tbh.newTabSpec("MASA").setContent(R.id.Masa).setIndicator("MASA", null));
-        tbh.addTab(tbh.newTabSpec("TRANSFERENCIA").setContent(R.id.Masa).setIndicator("TRANSFERENCIA", null));
-        tbh.addTab(tbh.newTabSpec("TIEMPO").setContent(R.id.Masa).setIndicator("TIEMPO", null));
-        tbh.addTab(tbh.newTabSpec("VOLUMEN").setContent(R.id.Masa).setIndicator("VOLUMEN", null));
+        tbh.addTab(tbh.newTabSpec("TRANSFERENCIA").setContent(R.id.Transferencia).setIndicator("TRANSFERENCIA", null));
+        tbh.addTab(tbh.newTabSpec("TIEMPO").setContent(R.id.Tiempo).setIndicator("TIEMPO", null));
+        tbh.addTab(tbh.newTabSpec("VOLUMEN").setContent(R.id.Volumen).setIndicator("VOLUMEN", null));
         btn = findViewById(R.id.btnConvertirLongitud);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,8 +154,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
-
-
 
 class conversores{
     double[][] valores={
