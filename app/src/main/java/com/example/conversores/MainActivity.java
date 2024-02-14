@@ -24,12 +24,12 @@ public class MainActivity extends AppCompatActivity {
         tbh = findViewById(R.id.tbhConversor);
         tbh.setup();
 
-        tbh.addTab(tbh.newTabSpec("LONGITUD").setContent(R.id.tabLongitud).setIndicator("spnLongitud", null));
-        tbh.addTab(tbh.newTabSpec("ALMACENAMIENTO").setContent(R.id.Almacenamiento).setIndicator("spnAlmacenamiento", null));
-        tbh.addTab(tbh.newTabSpec("MONEDAS").setContent(R.id.Monedas).setIndicator("spnMonedas", null));
-        tbh.addTab(tbh.newTabSpec("MASA").setContent(R.id.Masa).setIndicator("spnMasa", null));
+        tbh.addTab(tbh.newTabSpec("LONGITUD").setContent(R.id.Longitud).setIndicator("LONGITUD", null));
+        tbh.addTab(tbh.newTabSpec("ALMACENAMIENTO").setContent(R.id.Almacenamiento).setIndicator("ALMACENAMIENTO", null));
+        tbh.addTab(tbh.newTabSpec("MONEDAS").setContent(R.id.Monedas).setIndicator("MONEDAS", null));
+        tbh.addTab(tbh.newTabSpec("MASA").setContent(R.id.Masa).setIndicator("MASA", null));
         tbh.addTab(tbh.newTabSpec("TRANSFERENCIA").setContent(R.id.Masa).setIndicator("TRANSFERENCIA", null));
-        tbh.addTab(tbh.newTabSpec("TIEEMPO").setContent(R.id.Masa).setIndicator("TIEMPO", null));
+        tbh.addTab(tbh.newTabSpec("TIEMPO").setContent(R.id.Masa).setIndicator("TIEMPO", null));
         tbh.addTab(tbh.newTabSpec("VOLUMEN").setContent(R.id.Masa).setIndicator("VOLUMEN", null));
         btn = findViewById(R.id.btnConvertirLongitud);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 tempVal = findViewById(R.id.txtCantidadAlmacenamiento);
                 double cantidad = Double.parseDouble(tempVal.getText().toString());
 
-                double resp = miObj.convertir(0, de, a, cantidad);
+                double resp = miObj.convertir(1, de, a, cantidad);
                 Toast.makeText(getApplicationContext(), "Respuesta: "+ resp, Toast.LENGTH_LONG).show();
             }
         });
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 tempVal = findViewById(R.id.txtCantidadMonedas);
                 double cantidad = Double.parseDouble(tempVal.getText().toString());
 
-                double resp = miObj.convertir(0, de, a, cantidad);
+                double resp = miObj.convertir(2, de, a, cantidad);
                 Toast.makeText(getApplicationContext(), "Respuesta: "+ resp, Toast.LENGTH_LONG).show();
             }
         });
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 tempVal = findViewById(R.id.txtCantidadMasa);
                 double cantidad = Double.parseDouble(tempVal.getText().toString());
 
-                double resp = miObj.convertir(0, de, a, cantidad);
+                double resp = miObj.convertir(3, de, a, cantidad);
                 Toast.makeText(getApplicationContext(), "Respuesta: "+ resp, Toast.LENGTH_LONG).show();
             }
         });
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 tempVal = findViewById(R.id.txtCantidadTransferencia);
                 double cantidad = Double.parseDouble(tempVal.getText().toString());
 
-                double resp = miObj.convertir(0, de, a, cantidad);
+                double resp = miObj.convertir(4, de, a, cantidad);
                 Toast.makeText(getApplicationContext(), "Respuesta: "+ resp, Toast.LENGTH_LONG).show();
             }
         });
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 tempVal = findViewById(R.id.txtCantidadTiempo);
                 double cantidad = Double.parseDouble(tempVal.getText().toString());
 
-                double resp = miObj.convertir(0, de, a, cantidad);
+                double resp = miObj.convertir(5, de, a, cantidad);
                 Toast.makeText(getApplicationContext(), "Respuesta: "+ resp, Toast.LENGTH_LONG).show();
             }
         });
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 tempVal = findViewById(R.id.txtCantidadVolumen);
                 double cantidad = Double.parseDouble(tempVal.getText().toString());
 
-                double resp = miObj.convertir(0, de, a, cantidad);
+                double resp = miObj.convertir(6, de, a, cantidad);
                 Toast.makeText(getApplicationContext(), "Respuesta: "+ resp, Toast.LENGTH_LONG).show();
             }
         });
