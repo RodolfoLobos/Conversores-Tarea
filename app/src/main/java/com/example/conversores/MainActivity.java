@@ -25,25 +25,24 @@ public class MainActivity extends AppCompatActivity {
         tbh = findViewById(R.id.tbhConversor);
         tbh.setup();
 
-        tbh.addTab(tbh.newTabSpec("LONGITUD").setContent(R.id.Longitud).setIndicator("LONGITUD", null));
+        tbh.addTab(tbh.newTabSpec("Valor_Pagar").setContent(R.id.Valor_Pagar).setIndicator("Valor_Pagar", null));
         tbh.addTab(tbh.newTabSpec("Area").setContent(R.id.Area).setIndicator("Area", null));
 
-        btn = findViewById(R.id.btnConvertirLongitud);
+        btn = findViewById(R.id.btnConvertirValor_Pagar);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                spn = findViewById(R.id.spnDeLongitud);
-                int de = spn.getSelectedItemPosition();
+            public void onClick(View v) {
+                tempVal = findViewById(R.id.txtCantidadValor_Pagar);
+                double numero1 = Double.parseDouble(tempVal.getText().toString());
 
-                spn = findViewById(R.id.spnALongitud);
-                int a = spn.getSelectedItemPosition();
-
-
-                tempVal = findViewById(R.id.txtCantidadLongitud);
-                double cantidad = Double.parseDouble(tempVal.getText().toString());
-
-                double resp = miObj.convertir(0, de, a, cantidad);
-                Toast.makeText(getApplicationContext(), "Respuesta: "+ resp, Toast.LENGTH_LONG).show();
+                double Calcular = 0;
+                        if(numero1 <= 18) {
+                            Calcular = 6;
+                        }else if (numero1 <=28 ) {
+                            Calcular = (numero1 = 18) * 0.45 + 6;
+                        } else if (numero1 >=29) {
+                            Calcular = (numero1 = 28)* 0.65 + 4.5 +6;
+                        }
             }
         });
 
@@ -75,33 +74,5 @@ class conversores {
 
     public double convertir(int opcion, int de, int a, double cantidad) {
         return valores[opcion][a] / valores[opcion][de] * cantidad;
+    }
 }
-
-    public static double calcularValorPagar ( int metrosConsumidos){
-        double valorPagar = 0;
-
-        if (metrosConsumidos >= 1 && metrosConsumidos <= 18) {
-            valorPagar = 6;
-        } else if (metrosConsumidos >= 19 && metrosConsumidos <= 28) {
-            int exceso = metrosConsumidos - 18;
-            valorPagar = 6 + (exceso * 0.45);
-        } else if (metrosConsumidos >= 29) {
-            int exceso28 = metrosConsumidos - 28;
-            int exceso18 = 28 - 18;
-            valorPagar = 6 + (exceso28 * 0.65) + (exceso18 * 0.45);
-        }
-
-        return valorPagar();
-    }
-
-    private static double valorPagar() {
-        return 0;
-    }
-
-
-    public static void main (String[]args){
-        int metrosConsumidos = 38;
-        double valorAPagar = calcularValorPagar(metrosConsumidos);
-        System.out.println("Valor a pagar: $" + valorAPagar);
-        }
-        }

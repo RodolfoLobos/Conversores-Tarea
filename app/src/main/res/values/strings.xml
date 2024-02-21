@@ -1,12 +1,6 @@
 <resources>
     <string name="app_name">Conversores</string>
 
-    <string-array name="spnLongitud">
-        <item>1 a 18 </item>
-    </string-array>
-
-
-
     <string-array name="spnArea">
         <item>Pie Cuadrado</item>
         <item>Vara Cuadrada</item>
