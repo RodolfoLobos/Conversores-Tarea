@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         tbh = findViewById(R.id.tbhConversor);
         tbh.setup();
 
@@ -66,13 +67,41 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-class conversores{
-    double[][] valores={
-            {1, },
-            {10.7639, 0.698796, 0.836127, 1 , 628.8, 6474.9702758, 10000}, //Área
+class conversores {
+    double[][] valores = {
+            {1,},
+            {10.7639, 0.698796, 0.836127, 1, 628.8, 6474.9702758, 10000}, //Área
     };
-    public double convertir(int opcion, int de, int a, double cantidad){
-        return valores[opcion][a]/valores[opcion][de]*cantidad;
-    }
+
+    public double convertir(int opcion, int de, int a, double cantidad) {
+        return valores[opcion][a] / valores[opcion][de] * cantidad;
 }
 
+    public static double calcularValorPagar ( int metrosConsumidos){
+        double valorPagar = 0;
+
+        if (metrosConsumidos >= 1 && metrosConsumidos <= 18) {
+            valorPagar = 6;
+        } else if (metrosConsumidos >= 19 && metrosConsumidos <= 28) {
+            int exceso = metrosConsumidos - 18;
+            valorPagar = 6 + (exceso * 0.45);
+        } else if (metrosConsumidos >= 29) {
+            int exceso28 = metrosConsumidos - 28;
+            int exceso18 = 28 - 18;
+            valorPagar = 6 + (exceso28 * 0.65) + (exceso18 * 0.45);
+        }
+
+        return valorPagar();
+    }
+
+    private static double valorPagar() {
+        return 0;
+    }
+
+
+    public static void main (String[]args){
+        int metrosConsumidos = 38;
+        double valorAPagar = calcularValorPagar(metrosConsumidos);
+        System.out.println("Valor a pagar: $" + valorAPagar);
+        }
+        }
