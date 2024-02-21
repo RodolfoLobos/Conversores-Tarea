@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
                         } else if (numero1 >=29) {
                             Calcular = (numero1 = 28)* 0.65 + 4.5 +6;
                         }
+
+                        tempVal = findViewById(R.id.lblRespuesta);
+                        tempVal.setText("Precio: "+ Calcular + "$");
             }
         });
 
